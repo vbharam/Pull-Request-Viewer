@@ -13,28 +13,32 @@ class CompareTableViewCell: UITableViewCell {
     @IBOutlet weak var fileName: UILabel!
     @IBOutlet weak var baseFile: UITextView!
     @IBOutlet weak var currFile: UITextView!
+    @IBOutlet weak var additionLabel: UILabel!
+    @IBOutlet weak var deletionLabel: UILabel!
 
     func updateUI(with file: FileChange) {
         fileName.text = file.filename
-        if file.filename.contains("pbxproj") {
+        additionLabel.text = "Total Additions - \(file.additions ?? 0)"
+        deletionLabel.text = "Total Deletions - \(file.deletions ?? 0)"
+        if let filename = file.filename, filename.contains("pbxproj") {
             baseFile.text = "..."
             currFile.text = "..."
         } else {
-            baseFile.attributedText = decorateText(with: file.patch!).base
-            currFile.attributedText = decorateText(with: file.patch!).curr
+            baseFile.attributedText = decorateText(with: file.patch).base
+            currFile.attributedText = decorateText(with: file.patch).curr
         }
     }
 
-    func decorateText(with originalText: String) -> (base: NSMutableAttributedString, curr: NSMutableAttributedString) {
-        let lines = originalText.split(separator: "\n")
+    func decorateText(with originalText: String?) -> (base: NSMutableAttributedString, curr: NSMutableAttributedString) {
+        let lines = originalText?.split(separator: "\n") ?? []
         let baseContent = NSMutableAttributedString()
         let currContent = NSMutableAttributedString()
         let emptyLine = NSAttributedString(string: String("\n"), attributes: [:])
         var removalsSoFar = 0
 
         for line in lines {
-            if line.prefix(2) == "@@" && line.suffix(2)  == "@@" {
-                let changeHeader = NSAttributedString(string: String(line + "\n"), attributes: [NSAttributedStringKey.strokeColor : UIColor.gray])
+            if line.prefix(2) == "@@" {
+                let changeHeader = NSAttributedString(string: String(line + "\n"), attributes: [NSAttributedStringKey.backgroundColor : CONSTANTS.FADED_BLUE, NSAttributedStringKey.strokeColor : UIColor.lightText])
                 baseContent.append(changeHeader)
                 currContent.append(emptyLine)
             } else if line.contains("-") {

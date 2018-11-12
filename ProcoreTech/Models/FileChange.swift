@@ -9,11 +9,11 @@
 import Foundation
 
 class FileChange {
-    var filename: String!
-    var status: String!
-    var additions: Int!
-    var deletions: Int!
-    var changes: Int!
+    var filename: String?
+    var status: String?
+    var additions: Int?
+    var deletions: Int?
+    var changes: Int?
     var patch: String?
 
     public init(fromDictionary dictionary: [String : AnyObject]) {

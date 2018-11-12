@@ -15,6 +15,8 @@ enum CONSTANTS {
 
     static let FADED_RED = UIColor.init(red: 255/255, green: 238/255, blue: 240/255, alpha: 1.0)
     static let FADED_GREEN = UIColor.init(red: 255/230, green: 255/255, blue: 237/255, alpha: 1.0)
+
+     static let FADED_BLUE = UIColor.init(red: 215/230, green: 236/255, blue: 255/255, alpha: 1.0)
 }
 
 

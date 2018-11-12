@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="32" width="667" height="343"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="pullRequestCell" rowHeight="60" id="951-Xn-yPR" customClass="PullRequestTableViewCell" customModule="ProcoreTech" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="pullRequestCell" rowHeight="60" id="951-Xn-yPR" customClass="PullRequestTableViewCell" customModule="ProcoreTech" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="667" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="951-Xn-yPR" id="pan-8Z-QcZ">
@@ -89,7 +89,7 @@
                                 <rect key="frame" x="0.0" y="32" width="667" height="343"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="pullRequestDetailCell" rowHeight="315" id="Mqe-7M-BLM" customClass="CompareTableViewCell" customModule="ProcoreTech" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="pullRequestDetailCell" rowHeight="315" id="Mqe-7M-BLM" customClass="CompareTableViewCell" customModule="ProcoreTech" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="667" height="315"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mqe-7M-BLM" id="U4u-Wg-gwi">
@@ -97,32 +97,50 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8d-2b-1w4">
-                                                    <rect key="frame" x="12" y="12" width="643" height="14"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                                    <rect key="frame" x="12" y="12" width="643" height="13"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
                                                     <color key="textColor" red="0.066666666669999999" green="0.46666666670000001" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deletions" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ag7-kK-tf8">
+                                                    <rect key="frame" x="12" y="30" width="300" height="13"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
+                                                    <color key="textColor" red="0.70140773057937622" green="0.053228343332700247" blue="0.063643080623579887" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5q1-q9-8yr">
-                                                    <rect key="frame" x="12" y="38" width="300" height="276.5"/>
+                                                    <rect key="frame" x="12" y="48" width="300" height="266.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5D-TX-hTu">
-                                                    <rect key="frame" x="355" y="38" width="300" height="276.5"/>
+                                                    <rect key="frame" x="355" y="48" width="300" height="266.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Additions: " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ux8-RF-0BQ">
+                                                    <rect key="frame" x="355" y="36" width="286" height="14"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
+                                                    <color key="textColor" red="0.18039215689999999" green="0.80000000000000004" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="j5D-TX-hTu" secondAttribute="bottom" id="40E-qr-ZjW"/>
+                                                <constraint firstItem="ux8-RF-0BQ" firstAttribute="centerY" secondItem="Ag7-kK-tf8" secondAttribute="centerY" id="6Px-ST-9tS"/>
+                                                <constraint firstItem="5q1-q9-8yr" firstAttribute="top" secondItem="Ag7-kK-tf8" secondAttribute="bottom" constant="5" id="FFq-cD-jc9"/>
+                                                <constraint firstItem="Ag7-kK-tf8" firstAttribute="width" secondItem="5q1-q9-8yr" secondAttribute="width" id="GDg-Sx-ET5"/>
                                                 <constraint firstItem="j5D-TX-hTu" firstAttribute="width" secondItem="5q1-q9-8yr" secondAttribute="width" id="JNu-4O-Pqe"/>
                                                 <constraint firstItem="j5D-TX-hTu" firstAttribute="trailing" secondItem="n8d-2b-1w4" secondAttribute="trailing" id="KJW-7G-sTM"/>
-                                                <constraint firstItem="5q1-q9-8yr" firstAttribute="top" secondItem="n8d-2b-1w4" secondAttribute="bottom" constant="12" id="Qr9-kj-1ul"/>
+                                                <constraint firstItem="ux8-RF-0BQ" firstAttribute="leading" secondItem="j5D-TX-hTu" secondAttribute="leading" id="L5y-4a-AGo"/>
+                                                <constraint firstItem="Ag7-kK-tf8" firstAttribute="top" secondItem="n8d-2b-1w4" secondAttribute="bottom" constant="5" id="VkL-56-CRo"/>
+                                                <constraint firstItem="Ag7-kK-tf8" firstAttribute="leading" secondItem="5q1-q9-8yr" secondAttribute="leading" id="WmX-ev-4pS"/>
                                                 <constraint firstItem="n8d-2b-1w4" firstAttribute="leading" secondItem="U4u-Wg-gwi" secondAttribute="leading" constant="12" id="XX1-BQ-f0L"/>
                                                 <constraint firstAttribute="bottom" secondItem="5q1-q9-8yr" secondAttribute="bottom" id="g1j-Jw-8U1"/>
+                                                <constraint firstItem="ux8-RF-0BQ" firstAttribute="width" secondItem="j5D-TX-hTu" secondAttribute="width" id="kTz-Uq-7h4"/>
                                                 <constraint firstItem="j5D-TX-hTu" firstAttribute="top" secondItem="5q1-q9-8yr" secondAttribute="top" id="lyG-Jm-SN4"/>
                                                 <constraint firstAttribute="trailing" secondItem="n8d-2b-1w4" secondAttribute="trailing" constant="12" id="plZ-Dl-nq6"/>
                                                 <constraint firstItem="n8d-2b-1w4" firstAttribute="top" secondItem="U4u-Wg-gwi" secondAttribute="top" constant="12" id="sHx-td-0qQ"/>
@@ -131,8 +149,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="additionLabel" destination="ux8-RF-0BQ" id="wlb-cM-CoO"/>
                                             <outlet property="baseFile" destination="5q1-q9-8yr" id="4Pu-ba-Wg1"/>
                                             <outlet property="currFile" destination="j5D-TX-hTu" id="7kO-eL-OSP"/>
+                                            <outlet property="deletionLabel" destination="Ag7-kK-tf8" id="VMo-kv-86P"/>
                                             <outlet property="fileName" destination="n8d-2b-1w4" id="dk5-Ca-Ngp"/>
                                         </connections>
                                     </tableViewCell>
