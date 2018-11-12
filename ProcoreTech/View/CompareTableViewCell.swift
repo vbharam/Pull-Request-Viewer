@@ -20,24 +20,38 @@ class CompareTableViewCell: UITableViewCell {
             baseFile.text = "..."
             currFile.text = "..."
         } else {
-            currFile.attributedText = decorateText(with: file.patch!)
+            baseFile.attributedText = decorateText(with: file.patch!).base
+            currFile.attributedText = decorateText(with: file.patch!).curr
         }
     }
 
-    func decorateText(with originalText: String) -> NSMutableAttributedString {
+    func decorateText(with originalText: String) -> (base: NSMutableAttributedString, curr: NSMutableAttributedString) {
         let lines = originalText.split(separator: "\n")
-        let diffData = NSMutableAttributedString()
+        let baseContent = NSMutableAttributedString()
+        let currContent = NSMutableAttributedString()
+        let emptyLine = NSAttributedString(string: String("\n"), attributes: [:])
+        var removalsSoFar = 0
+
         for line in lines {
-            if line.contains("+") {
-                let added = NSAttributedString(string: String(line + "\n"), attributes: [NSAttributedStringKey.backgroundColor : UIColor.green])
-                diffData.append(added)
+            if line.prefix(2) == "@@" && line.suffix(2)  == "@@" {
+                let changeHeader = NSAttributedString(string: String(line + "\n"), attributes: [NSAttributedStringKey.strokeColor : UIColor.gray])
+                baseContent.append(changeHeader)
+                currContent.append(emptyLine)
             } else if line.contains("-") {
-                let removed = NSAttributedString(string: String(line + "\n"), attributes: [NSAttributedStringKey.backgroundColor : UIColor.red])
-                diffData.append(removed)
+                let removed = NSAttributedString(string: String(line + "\n"), attributes: [NSAttributedStringKey.backgroundColor : CONSTANTS.FADED_RED])
+                baseContent.append(removed)
+                removalsSoFar += 1
+            } else if line.contains("+") {
+                let added = NSAttributedString(string: String(line + "\n"), attributes: [NSAttributedStringKey.backgroundColor : CONSTANTS.FADED_GREEN])
+                currContent.append(added)
+                removalsSoFar -= 1
+                if removalsSoFar < 0 { baseContent.append(emptyLine) }
             } else {
-                diffData.append(NSAttributedString(string: String(line), attributes: [:]))
+                baseContent.append(NSAttributedString(string: String(line + "\n"), attributes: [:]))
+                currContent.append(NSAttributedString(string: String(line + "\n"), attributes: [:]))
             }
+
         }
-        return diffData
+        return (baseContent, currContent)
     }
 }
