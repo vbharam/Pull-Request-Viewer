@@ -16,6 +16,11 @@ class CompareTableViewCell: UITableViewCell {
 
     func updateUI(with file: FileChange) {
         fileName.text = file.filename
-        currFile.text = file.patch
+        if file.filename.contains("pbxproj") {
+            baseFile.text = "..."
+            currFile.text = "..."
+        } else {
+            currFile.text = file.patch
+        }
     }
 }

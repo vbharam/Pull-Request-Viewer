@@ -20,8 +20,10 @@ class PullRequestDetailViewController: UIViewController {
         super.viewDidLoad()
         self.title = "#\(pullRequest.number ?? 0)"
         dataManager = DataFetchManager()
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 300.0
 
         // Get initial data:
         self.fetchDiffData { (files) in
@@ -46,10 +48,6 @@ class PullRequestDetailViewController: UIViewController {
 extension PullRequestDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return changedFilesData.count
-    }
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120.0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
