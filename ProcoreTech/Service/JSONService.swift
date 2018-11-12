@@ -13,14 +13,14 @@ public class JSONService {
     public init() {}
 
     // GetData function to get JSON data
-    func getData(url:String, completionHandler: @escaping (([[String: AnyObject]]?) -> Void)) -> Void {
+    func getData(url:String, completionHandler: @escaping ((AnyObject?) -> Void)) -> Void {
         let url: NSURL = NSURL(string: url)!
         let task = URLSession.shared.dataTask(with: url as URL, completionHandler: {data, response, error -> Void in
             if error != nil {
                 print("Error: \(error!.localizedDescription)")
             } else {
                 do {
-                    let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [[String: AnyObject]]
+                    let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as AnyObject
                     return completionHandler(json)
                 } catch let error as NSError {
                     print("Error: \(error.localizedDescription)")

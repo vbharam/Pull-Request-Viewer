@@ -18,15 +18,4 @@ class PullRequestTableViewCell: UITableViewCell {
         let metaData = "#\(data.number ?? 0) opened by \(data.owner ?? "")"
         prMetadata.text = metaData
     }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
-
-    }
-
 }
