@@ -12,6 +12,9 @@
 		8515B4D82198EB6400DA1AC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8515B4D62198EB6400DA1AC0 /* Main.storyboard */; };
 		8515B4DA2198EB6700DA1AC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8515B4D92198EB6700DA1AC0 /* Assets.xcassets */; };
 		8515B4DD2198EB6700DA1AC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8515B4DB2198EB6700DA1AC0 /* LaunchScreen.storyboard */; };
+		8515B4E62198ED4F00DA1AC0 /* JSONService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8515B4E52198ED4F00DA1AC0 /* JSONService.swift */; };
+		8515B4E92198EF1200DA1AC0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8515B4E82198EF1200DA1AC0 /* Constants.swift */; };
+		8515B4EC2198F47000DA1AC0 /* PullRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8515B4EB2198F47000DA1AC0 /* PullRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		8515B4D92198EB6700DA1AC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8515B4DC2198EB6700DA1AC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8515B4DE2198EB6700DA1AC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8515B4E52198ED4F00DA1AC0 /* JSONService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONService.swift; sourceTree = "<group>"; };
+		8515B4E82198EF1200DA1AC0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8515B4EB2198F47000DA1AC0 /* PullRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,9 @@
 		8515B4D12198EB6400DA1AC0 /* ProcoreTech */ = {
 			isa = PBXGroup;
 			children = (
+				8515B4EA2198F46100DA1AC0 /* Model */,
+				8515B4E72198EF0600DA1AC0 /* Util */,
+				8515B4E42198EBA200DA1AC0 /* Service */,
 				8515B4D22198EB6400DA1AC0 /* AppDelegate.swift */,
 				8515B4D42198EB6400DA1AC0 /* ViewController.swift */,
 				8515B4D62198EB6400DA1AC0 /* Main.storyboard */,
@@ -62,6 +71,30 @@
 				8515B4DE2198EB6700DA1AC0 /* Info.plist */,
 			);
 			path = ProcoreTech;
+			sourceTree = "<group>";
+		};
+		8515B4E42198EBA200DA1AC0 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				8515B4E52198ED4F00DA1AC0 /* JSONService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		8515B4E72198EF0600DA1AC0 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				8515B4E82198EF1200DA1AC0 /* Constants.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		8515B4EA2198F46100DA1AC0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8515B4EB2198F47000DA1AC0 /* PullRequest.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +170,9 @@
 			files = (
 				8515B4D52198EB6400DA1AC0 /* ViewController.swift in Sources */,
 				8515B4D32198EB6400DA1AC0 /* AppDelegate.swift in Sources */,
+				8515B4E62198ED4F00DA1AC0 /* JSONService.swift in Sources */,
+				8515B4EC2198F47000DA1AC0 /* PullRequest.swift in Sources */,
+				8515B4E92198EF1200DA1AC0 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

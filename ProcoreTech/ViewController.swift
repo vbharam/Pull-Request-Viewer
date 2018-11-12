@@ -10,16 +10,26 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var dataManager: JSONService!
+    var pullRequests: [PullRequest] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        dataManager = JSONService()
+
+        // Get initial data:
+        self.fetchData()
+
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func fetchData() {
+        dataManager.getData(url: CONSTANTS.GET_ALL_PULL_REQUESTS) { (data) in
+            guard let data = data else { return }
+            for entry in data {
+                let pr = PullRequest(fromDictionary: entry)
+                self.pullRequests.append(pr)
+            }
+        }
     }
-
-
 }
 
