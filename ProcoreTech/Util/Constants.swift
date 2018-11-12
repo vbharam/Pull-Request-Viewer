@@ -9,7 +9,7 @@
 import Foundation
 
 enum CONSTANTS {
-    static let GET_ALL_PULL_REQUESTS = "https://api.github.com/repos/magicalpanda/MagicalRecord/pulls"
+    static let PULL_REQUESTS_API = "https://api.github.com/repos/magicalpanda/MagicalRecord/pulls"
 }
 
 
