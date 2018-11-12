@@ -20,7 +20,24 @@ class CompareTableViewCell: UITableViewCell {
             baseFile.text = "..."
             currFile.text = "..."
         } else {
-            currFile.text = file.patch
+            currFile.attributedText = decorateText(with: file.patch!)
         }
+    }
+
+    func decorateText(with originalText: String) -> NSMutableAttributedString {
+        let lines = originalText.split(separator: "\n")
+        let diffData = NSMutableAttributedString()
+        for line in lines {
+            if line.contains("+") {
+                let added = NSAttributedString(string: String(line + "\n"), attributes: [NSAttributedStringKey.backgroundColor : UIColor.green])
+                diffData.append(added)
+            } else if line.contains("-") {
+                let removed = NSAttributedString(string: String(line + "\n"), attributes: [NSAttributedStringKey.backgroundColor : UIColor.red])
+                diffData.append(removed)
+            } else {
+                diffData.append(NSAttributedString(string: String(line), attributes: [:]))
+            }
+        }
+        return diffData
     }
 }
